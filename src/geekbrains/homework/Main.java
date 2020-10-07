@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Main {
 
-    final static int SIZE = 500000;
+    final static int SIZE = 10000000;
     final static int HALF_SIZE = SIZE / 2;
 
     public static void main(String[] args) {
@@ -21,7 +21,6 @@ public class Main {
         for (int i = 0; i < testArray.length; i++) {
             testArray[i] = (float) (testArray[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
         }
-        System.currentTimeMillis();
         System.out.println("Время работы 1 метода: " + (System.currentTimeMillis() - timeMillis));
     }
 
@@ -52,7 +51,6 @@ public class Main {
         System.arraycopy(testArray_1, 0, testArray, 0, HALF_SIZE);
         System.arraycopy(testArray_2, 0, testArray, HALF_SIZE, HALF_SIZE);
 
-        System.currentTimeMillis();
-        System.out.println("Время работы 2 метода: " + (System.currentTimeMillis() + time_1));
+        System.out.println("Время работы 2 метода: " + (System.currentTimeMillis() - time_1));
     }
 }
